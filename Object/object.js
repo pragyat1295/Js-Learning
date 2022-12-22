@@ -255,3 +255,14 @@ function test() {
 
 // test();
 
+const user = {
+    name: 'pragyat',
+    age: 27,
+    5: 22,
+}
+user['abc'] = 52;
+
+console.log(user);
+console.log(user['age']);
+console.log(user[5]);
+

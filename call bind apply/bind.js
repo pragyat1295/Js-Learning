@@ -46,8 +46,10 @@ Function.prototype.myBind = function(...args) {
         // now there might be the case where we will give the argument while invoking the
         // function, so for that we can pass the args2 for the returning function.
         // then concatinate these 2 arrays.
+
+        // since this params is in the form of an array thats why we are using apply to pass the params as an array.
         
-        obj.apply(args[0], [...params, ...args2]);
+        obj.apply(args[0], [...params, ...args2]); // concatinate both the arrays and pass as an argument.
 
     }
 }
