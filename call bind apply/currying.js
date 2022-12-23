@@ -197,3 +197,84 @@ let checkFunc = function(a,b,c,d) {
 console.log( 'checking outside',checkFunc.length);
 let checkCurry = curry(checkFunc);
 console.log(checkCurry(2)(3)(4)(5));
+
+
+
+
+// ===============================================
+
+// Just curry revision 
+
+// ===============================================
+
+// function sum(a,b) {
+//     // console.log(a+b);
+//     return a+b;
+// }
+
+// let curry = function(fn) {
+//     return function(a) {
+//         return function(b) {
+//             return fn(a,b);
+//         }
+//     }
+// }
+
+// let currySum = curry(sum);
+
+// console.log(currySum(2)(3));
+
+// let curryMultiply = function(a) {
+//     return function(b) {
+//         return(a*b);
+//     }
+// }
+
+// console.log(curryMultiply(3)(5));
+
+// infinite currying implementation
+
+// curriedSum(1)(2)(3)......(n)();
+
+// let curriedSum = function(a) {
+//     return function(b) {
+//         if(b) {
+//             return curriedSum(a+b);
+//         }
+//         else return a;
+//     }
+// }
+
+// console.log(curriedSum(1)(2)(8)());
+
+// =================================================================
+
+// Write a curry function to convert a function into a curried function for n number of parameters.
+
+// ====================================================================
+
+// function currying(func) {
+//     return function curriedFunc(...args) {
+//         if(args.length >= func.length) {
+//             return func(...args);
+//         }
+//         else {
+//             return function(...args2) {
+//                 return curriedFunc(...args, ...args2);
+//             }
+//         }
+//     }
+// }
+
+
+// function cSum(a,b,c,d) {
+//     return a+b+c+d;
+// }
+
+
+// let checkCurrySum = currying(cSum); 
+
+// console.log(checkCurrySum(1)(2)(3)(4));
+
+
+
