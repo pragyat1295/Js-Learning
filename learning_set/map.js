@@ -78,3 +78,16 @@ const obj2 = {1: 11, 3: 12, 4: 13};
 for(const key in obj2) {
     console.log(key)
 }
+obj2[3] = 7;
+obj2[8] = 99;
+
+
+console.log(obj2);
+
+const obj3 = {};
+const a = {xe: 55555};
+
+obj3[1] = 22;
+// obj3[a] = 55;
+
+console.log(obj3);

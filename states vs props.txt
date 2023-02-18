@@ -1,0 +1,3 @@
+- you can modify the data using state inside a class components.
+- we cannot update the data using the props.
+- If you need to update the props data then you need to convert the data into the state and only then you can update it.

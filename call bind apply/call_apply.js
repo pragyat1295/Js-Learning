@@ -34,6 +34,8 @@ let fullName = function(homeTown) {
 // use the apply method
 
 fullName.apply(obj2, ['Kanpur']);
+
+
 function Product(name, price) {
     this.name = name;
     this.price = price;
