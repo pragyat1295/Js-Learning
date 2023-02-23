@@ -1,0 +1,30 @@
+function findSpecialElements(arr) {
+    const n = arr.length;
+    
+    // create min array of all zeros, and last element as Infinity
+    const suffix_min = new Array(n + 1).fill(0);
+    suffix_min[n] = Infinity;
+    
+    // from back to the front of the array, 
+    // we select either the minimum of the suffix array at i+1th 
+    // position or at the ith position on the array
+    for (let i = n - 1; i >= 0; i--) {
+        suffix_min[i] = Math.min(suffix_min[i + 1], arr[i]);
+    }
+    
+    let prefix_max_value = -1;
+    let res = 0;
+    
+    // iterate though the array
+    for (let i = 0; i < n; i++) {
+        const val = arr[i];
+        prefix_max_value = Math.max(prefix_max_value, val);
+        if (prefix_max_value <= suffix_min[i + 1]) {
+            res += 1;
+        }
+    }
+    
+    return res;
+}
+
+https://takeitoutamber.medium.com/hackerank-coding-interview-1-subsegment-sort-ee464b43dfe0

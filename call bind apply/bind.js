@@ -31,7 +31,7 @@ checkBind('India');
 // (create your own bind method)
 
 Function.prototype.myBind = function(...args) {
-    let obj = this;
+    let func = this;
 
     // console.log(args);
     let params = args.slice(1);
@@ -40,7 +40,7 @@ Function.prototype.myBind = function(...args) {
         // it has to return all the arguments that has been passed through bind method
         // like the object of which we have to consider its properties.
 
-        // obj.call(args[0]);
+        // func.call(args[0]);
         // since we need to return an array for the other parameters so we have to use bind.
 
         // now there might be the case where we will give the argument while invoking the
@@ -49,7 +49,7 @@ Function.prototype.myBind = function(...args) {
 
         // since this params is in the form of an array thats why we are using apply to pass the params as an array.
         
-        obj.apply(args[0], [...params, ...args2]); // concatinate both the arrays and pass as an argument.
+        func.apply(args[0], [...params, ...args2]); // concatinate both the arrays and pass as an argument.
 
     }
 }

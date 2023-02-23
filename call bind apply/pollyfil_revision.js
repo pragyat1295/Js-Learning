@@ -60,12 +60,12 @@ let checkBind = getData.bind(obj, 'Kanpur');
 checkBind('India');
 
 Function.prototype.myBind = function(...args) {
-    let myObj = this;
+    let myFunc = this;
     let params = args.slice(1);
     
     return function(...args2) {
-        // myObj.call(args[0]);
-        myObj.apply(args[0], [...params, ...args2])
+        // myFunc.call(args[0]);
+        myFunc.apply(args[0], [...params, ...args2])
 
     }
 }
