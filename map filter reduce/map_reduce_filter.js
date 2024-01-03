@@ -7,7 +7,7 @@ const users = [
     {firstName: 'Ravi', lastName: 'Kishan', age: 26},
 ]
 
-// return the first name of the person whose age is less than 30.
+// return the firstName of the person whose age is less than 30.
 
 const output = users.filter((x) => {
     return x.age < 30
