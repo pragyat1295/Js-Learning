@@ -54,3 +54,23 @@ const output4 = users.map((x) => {
 })
 
 console.log(output4);
+
+// divide them into based on their type.
+
+const inventory = [
+  { name: 'asparagus', type: 'vegetables', quantity: 5 },
+  { name: 'bananas', type: 'fruit', quantity: 0 },
+  { name: 'goat', type: 'meat', quantity: 23 },
+  { name: 'cherries', type: 'fruit', quantity: 5 },
+  { name: 'fish', type: 'meat', quantity: 22 },
+];
+
+const obj2 = inventory.reduce((acc, curr) => {
+  if (curr.type in acc) {
+    acc[curr.type].push(curr);
+  } else {
+    acc[curr.type] = [curr];
+  }
+  return acc;
+}, {});
+console.log('obj===', obj2);
